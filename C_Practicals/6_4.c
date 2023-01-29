@@ -1,3 +1,5 @@
+/*Created By YOGI0360*/
+
 #include <stdio.h>
 
 int main()
@@ -6,18 +8,10 @@ int main()
 
     printf("game overview:\n\tthere are 21 sticks.\n\tyou have to pick sticks in between 1 to 4\n\tafter your pick, I will pick sticks.\n\tWhoever is forced to pick up the last match-stick loses the game.\n\n");
 
-    while (1)
+    while (sticks != 1)
     {
-        if (sticks == 1)
-            break;
-
         printf("It's your turn.    (left sticks = %d): ", sticks);
         scanf("%d", &taken_sticks);
-        if (taken_sticks > sticks)
-        {
-            printf("There are %d sticks left, You can't pick %d sticks\n", sticks, taken_sticks);
-            continue;
-        }
         if (taken_sticks > 4 || taken_sticks < 1)
         {
             printf("You can't pick %d sticks, You must pick sticks in this range: %d - %d\n", taken_sticks, 1, 4);
@@ -30,5 +24,8 @@ int main()
     }
     printf("\nOops, there is only 1 stick left.\n");
     printf("You loose the game :(.\n\n");
+
+    printf("Created By YOGI0360");
+
     return 0;
 }

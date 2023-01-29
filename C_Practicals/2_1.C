@@ -1,3 +1,5 @@
+/*Created By YOGI0360*/
+
 #include <stdio.h>
 
 void main()
@@ -19,6 +21,7 @@ void main()
   printf("Number of Women: %ld\n", Women);
   printf("Number of Literate Women: %ld\n", LiterateWomen);
   printf("Number of illiterate Women: %ld\n", IlliterateWomen);
+  printf("Created By YOGI0360");
 }
 
 

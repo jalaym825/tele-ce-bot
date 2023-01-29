@@ -1,3 +1,5 @@
+/*Created By YOGI0360*/
+
 #include<stdio.h>
 
 void main()
@@ -8,4 +10,5 @@ void main()
   printf("%c\t\tIf you are pushing something away,\t\t\t%c\n", 1, 1);
   printf("%c\t\t\tYou are inviting it to stay.\" by Micheal Singer.%c\n", 4, 4);
   printf("%c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c %c\n", 1, 4, 3, 1, 4, 3, 1, 4, 3, 1, 4, 3, 1, 4, 3, 1, 4, 3, 1, 4, 3, 1, 4, 3, 1, 4, 3, 1, 4, 3, 1, 4, 3, 1, 4, 3, 1);
+  printf("\nCreated By YOGI0360");
 }

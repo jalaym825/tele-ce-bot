@@ -1,3 +1,5 @@
+/*Created By YOGI0360*/
+
 #include <stdio.h>
 #include <math.h>
 #define PI 3.14
@@ -15,4 +17,6 @@ void main()
     time_period = 2 * PI * sqrtf(length / gravity);
 
     printf("time period is %.2f seconds\n\n", time_period);
+
+    printf("Created By YOGI0360");
 }

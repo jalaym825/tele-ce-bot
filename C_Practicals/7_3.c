@@ -1,51 +1,59 @@
+/*Created By YOGI0360*/
+
 #include <stdio.h>
 
 int main()
 {
 
-    int matrix_a[3][3], matrix_b[3][3], finale_matrix[3][3];
+    int mat1[3][3], mat2[3][3], mat3[3][3] = {0}, i, j, k, sum;
 
     printf("For Matrix A\n");
     printf("Enter row elements 1 by 1:\n");
-    for (int i = 0; i < 3; i++)
+    for (i = 0; i < 3; i++)
     {
-        for (int j = 0; j < 3; j++)
+        for (j = 0; j < 3; j++)
         {
-            scanf("%d", &matrix_a[i][j]);
+            printf("Enter A[%d][%d]", i + 1, j + 1);
+            scanf("%d", &mat1[i][j]);
         }
     }
     printf("--------------------------\n");
     printf("For Matrix B\n");
     printf("Enter row elements 1 by 1:\n");
-    for (int i = 0; i < 3; i++)
+    for (i = 0; i < 3; i++)
     {
-        for (int j = 0; j < 3; j++)
+        for (j = 0; j < 3; j++)
         {
-            scanf("%d", &matrix_b[i][j]);
+            printf("Enter A[%d][%d]", i + 1, j + 1);
+            scanf("%d", &mat2[i][j]);
         }
     }
 
-    for (int i = 0; i < 3; i++)
+    for (i = 0; i < 3; i++)
     {
-        for (int j = 0; j < 3; j++)
+        for (j = 0; j < 3; j++)
         {
-            finale_matrix[i][j] = 0;
-            for (int k = 0; k < 3; k++)
+            sum=0;
+            for (k = 0; k < 3; k++)
             {
-                finale_matrix[i][j] += matrix_a[i][k] * matrix_b[k][j];
+                sum += mat1[i][k] * mat2[k][j];
             }
+            mat3[i][j] = sum;
         }
     }
 
     printf("\nA x B:\n");
 
-    for (int i = 0; i < 3; i++)
+    for (i = 0; i < 3; i++)
     {
-        for (int j = 0; j < 3; j++)
+        for (j = 0; j < 3; j++)
         {
-            printf("%d ", finale_matrix[i][j]);
+            printf("%3d ", mat3[i][j]);
         }
         printf("\n");
     }
+
+    printf("\nCreated By YOGI0360");
+
     return 0;
 }

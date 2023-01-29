@@ -1,3 +1,5 @@
+/*Created By YOGI0360*/
+
 #include <stdio.h>
 #include <math.h>
 
@@ -44,6 +46,8 @@ int main()
             break;
         }
     }
+
+    printf("\n\nCreated By YOGI0360\n\n");
 
     return 0;
 }

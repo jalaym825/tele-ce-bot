@@ -1,8 +1,10 @@
+/*Created By YOGI0360*/
+
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
 
-void palindrome(char[20], int i, int c);
+void palindrome(char[20], int);
 
 int main()
 {
@@ -14,29 +16,16 @@ int main()
     for (i = 0; i < strlen(str) - 1; i++)
         str[i] = tolower(str[i]);
 
-    for (int i = 0; i < strlen(str) / 2; i++)
-    {
-        if (str[i] == str[strlen(str) - i - 1])
-            c++;
-        else
-            break;
-    }
+    palindrome(str, 0);
 
-
-    if (c == strlen(str) / 2)
-        printf("it is");
-    else
-        printf("it isn't");
-
-    // palindrome(str, 0, 0);
-
+    printf("\nCreated By YOGI0360");
     return 0;
 }
 
-void palindrome(char string[20], int i, int c)
+void palindrome(char string[20], int i)
 {
     if (i < strlen(string) - 1 - i && string[i] == string[strlen(string) - 1 - i])
-        palindrome(string, i + 1, c + 1);
+        palindrome(string, i + 1);
     else
-        c == strlen(string) / 2 ? printf("it is palindrome") : printf("it is not palindrome");
+        i == strlen(string) / 2 ? printf("it is palindrome") : printf("it is not palindrome");
 }

@@ -1,3 +1,5 @@
+/*Created By YOGI0360*/
+
 #include <stdio.h>
 
 void main()
@@ -18,4 +20,6 @@ void main()
     _10_notes = rest_money / 10;
     rest_money = rest_money % 10;
     printf("10 -> %d\n\n", _10_notes);
+
+    printf("Created By YOGI0360");
 }

@@ -1,3 +1,5 @@
+/*Created by YOGI0360*/
+
 #include<stdio.h>
 
 void main() {
@@ -15,5 +17,13 @@ void main() {
     gross_salary = basic_salary+DA+HRA+MA+TA;
     net_salary = gross_salary-PF-IT;
 
-    printf("Enter your Basic Salary: %ld\nDA of Basic Salary: %ld\nHRA of Basic Salary: %ld\nMA of Basic Salary: %ld\nTA of Basic Salary: %ld\nPF of Basic Salary: %ld\nGross Salary: %ld\nNet Salary: %ld\n\n", basic_salary, DA, HRA, MA, TA, PF, gross_salary, net_salary);
+    printf("Your Basic Salary: %ld\n", basic_salary);
+    printf("DA of Basic Salary: %ld\n", DA);
+    printf("HRA of Basic Salary: %ld\n", HRA);
+    printf("MA of Basic Salary: %ld\n", MA);
+    printf("TA of Basic Salary: %ld\n",TA);
+    printf("PF of Basic Salary: %ld\n", PF);
+    printf("Gross Salary: %ld\n", gross_salary);
+    printf("Net Salary: %ld\n\n", net_salary);
+    printf("Created by YOGI0360");
 }

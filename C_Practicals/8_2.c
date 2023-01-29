@@ -1,39 +1,39 @@
-/*Created By 22CE071_Jalay*/
+/*Created By YOGI0360*/
 
 #include <stdio.h>
 #include <string.h>
 int main()
 {
-    char names[5][30];
+    char Name[5][30];
     int i = 0, j = 0;
     char temp[30];
     for (i = 0; i < 5; i++)
     {
         printf("enter name %d: ", i + 1);
-        fgets(names[i], 30, stdin);
+        fgets(Name[i], sizeof(Name[i]), stdin);
     }
 
     for (int i = 0; i < 5; i++)
     {
-        for (int j = 0; j < 5 - 1 - i; j++)
+        for (int j = 0; j < 4 - i; j++)
         {
-            if (strcmp(names[j], names[j + 1]) > 0)
+            if (strcmp(Name[j], Name[j + 1]) > 0)
             {
-                strcpy(temp, names[j]);
-                strcpy(names[j], names[j + 1]);
-                strcpy(names[j + 1], temp);
+                strcpy(temp, Name[j]);
+                strcpy(Name[j], Name[j + 1]);
+                strcpy(Name[j + 1], temp);
             }
         }
     }
 
     printf("----------------------\n");
-    printf("  Sorted Names Are:   \n");
+    printf("  Sorted Name Are:   \n");
     printf("----------------------\n");
     for (i = 0; i < 5; i++)
     {
-        printf("%d) %s", i + 1, names[i]);
+        printf("%d) %s", i + 1, Name[i]);
     }
-    printf("\n\nCreated By 22CE071_Jalay");
+    printf("\nCreated By YOGI0360");
 
     return 0;
 }

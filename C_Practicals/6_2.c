@@ -1,8 +1,10 @@
+/*Created By YOGI0360*/
+
 #include <stdio.h>
 
 void main()
 {
-    int x, y, answer=1, i = 0;
+    int x, y, answer = 1, i = 1;
     printf("in order to find x^y, enter the value of x: ");
     scanf("%d", &x);
     printf("enter the value of y: ");
@@ -10,9 +12,10 @@ void main()
 
     do
     {
-        answer *= x;
+        answer *= x; // answer = answer * x
         i++;
-    } while (i < y);
+    } while (i <= y);
 
     printf("and the answer of %d^%d is %d\n\n", x, y, answer);
+    printf("Created By YOGI0360");
 }

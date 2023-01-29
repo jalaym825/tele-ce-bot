@@ -1,25 +1,24 @@
+/*Created By YOGI0360*/
 #include <stdio.h>
-
+#define row 10
+#define column 7
 int main()
 {
     printf("MULTIPLICATION TABLE (1 to 7)\n");
     printf("-----------------------------\n");
-    int i = 1;
+    int i = 1, j = 1;
     do
     {
-        int j = 1;
+        j = 1;
         do
         {
-            printf(" ");
-            if (i * j >= 10)
-                printf("%d ", i * j);
-            else
-                printf(" %d ", i * j);
+            printf("%3d ", i * j);
             j++;
-        } while (j <= 7);
+        } while (j <= column);
         printf("\n");
         i++;
-    } while (i <= 10);
+    } while (i <= row);
     printf("-----------------------------");
+    printf("\n\nCreated By YOGI0360");
     return 0;
 }
