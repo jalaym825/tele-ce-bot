@@ -85,12 +85,43 @@ module.exports = class Utils {
             typeof input.prototype === 'object' &&
             input.toString().substring(0, 5) === 'class';
     }
-}
+    formatTime(milliseconds) {
+        if (!Number(milliseconds) || milliseconds <= 0) return `0 seconds`
+        if (!milliseconds || isNaN(milliseconds) || milliseconds <= 0) {
+            throw new RangeError("Utils#formatTime(milliseconds: number) Milliseconds must be a number greater than 0");
+        }
+        const seconds = Math.floor((milliseconds / 1000) % 60);
+        const minutes = Math.floor((milliseconds / (1000 * 60)) % 60);
+        const hours = Math.floor((milliseconds / (1000 * 60 * 60)) % 24);
+        const days = Math.floor(milliseconds / (1000 * 60 * 60 * 24));
 
-// module.exports = async (bot) => {
-//     bot.commands = new Map();
-//     bot.buttons = new Map();
-//     fs.readdirSync('./Commands').filter(x => x.toLowerCase().endsWith('.js')).forEach(x => bot.commands.set(x.split('.js')[0], require(`./Commands/${x}`)))
-//     fs.readdirSync('./Buttons').filter(x => x.toLowerCase().endsWith('.js')).forEach(x => bot.buttons.set(x.split('.js')[0], require(`./Buttons/${x}`)))
-//     return bot;
-// }
+        const d = days
+            ? days === 1
+                ? '1 day'
+                : `${days} days`
+            : null;
+        const h = hours
+            ? hours === 1
+                ? '1 hour'
+                : `${hours} hours`
+            : null;
+        const m = minutes
+            ? minutes === 1
+                ? '1 minute'
+                : `${minutes} minutes`
+            : null;
+        const s = seconds
+            ? seconds === 1
+                ? '1 second'
+                : `${seconds} seconds`
+            : null;
+
+        const time = [];
+        if (d) time.push(d);
+        if (h) time.push(h);
+        if (m) time.push(m);
+        if (s) time.push(s);
+
+        return time.join(", ");
+    }
+}
