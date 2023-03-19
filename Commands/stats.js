@@ -9,7 +9,6 @@ module.exports = class stats extends command {
         })
     }
     async run({ int }) {
-
         int.reply(`
 Users: \`${dataB.users.length}\`
 Total Files Requested: \`${dataB.files_requested}\`

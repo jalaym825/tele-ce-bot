@@ -11,5 +11,6 @@ module.exports = {
     Internal: 'int',
     Final: 'final',
     PL: 'Practical List',
-    HR:'Hacker Rank'
+    HR: 'Hacker Rank',
+    EXP: 'Experiment'
 }

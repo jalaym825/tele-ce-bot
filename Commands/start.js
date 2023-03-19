@@ -8,7 +8,6 @@ module.exports = class start extends command {
         })
     }
     async run({ int }) {
-
         if (int.update.callback_query?.data.split('/')[2]) {
             return this.bot.keyBoardButtons.get('sem').run({ int });
         }

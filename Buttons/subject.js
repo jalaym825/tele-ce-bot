@@ -19,23 +19,26 @@ module.exports = class sem1 extends button {
         const args = int.update.callback_query.data.split('/')
 
         if (args.length === 3) return this.menu(int)
-        else if (args[args.length - 1].includes('.pdf')) {
+        else if (args[args.length - 1].includes('.pdf'))
             return this.bot.utils.sendDoc(int.update.callback_query.data, int)
-        }
-        else if (new Array('LN', 'CE', 'TT', 'PE').includes(args[args.length - 1])) return this.ln(int)
-        else if (args[args.length - 1] === 'PYP') return this.pyp(int)
-        else if (new Array('Internal', 'Final').includes(args[args.length - 1])) {
+        else if (new Array('LN', 'CE', 'TT', 'PE', 'EXP').includes(args[args.length - 1]))
+            return this.ln(int)
+        else if (args[args.length - 1] === 'PYP')
+            return this.pyp(int)
+        else if (new Array('Internal', 'Final').includes(args[args.length - 1]))
             return this.ypyp(int)
-        } else if (new Array('Ass', 'QB', 'RB', 'SB', 'PL', 'HR').includes(args[args.length - 1])) {
+        else if (new Array('Ass', 'QB', 'RB', 'SB', 'PL', 'HR').includes(args[args.length - 1])) {
             let source = int.update.callback_query.data
             fs.readdirSync(source).forEach(x => {
-                if (x.endsWith('.pdf')||x.endsWith('.zip')) return this.bot.utils.sendDoc(`${source}/${x}`, int)
+                console.log(x)
+                if (x.endsWith('.pdf') || x.endsWith('.zip')) return this.bot.utils.sendDoc(`${source}/${x}`, int)
             })
         } else if (args[args.length - 3] === 'PYP') {
             let source = int.update.callback_query.data
             source = source.split('/').map(x => obj[x] ? obj[x] : x).join("/")
             return this.bot.utils.sendDoc(source, int)
-        } else this.menu(int);
+        } else
+            this.menu(int);
     }
 
     /**
@@ -94,7 +97,7 @@ module.exports = class sem1 extends button {
         let buttons = new Array();
         let temp = new Array();
         const path = int.update.callback_query.data
-        let chunk = this.bot.utils.chunk(fs.readdirSync(path).map(x => x.split('.pdf')[0].split("-").slice(-1)[0]).map(x => Number(x)).sort((x, y) => x - y).map(x => x.toString()).map(x => `Unit-${x}.pdf`), 5)
+        let chunk = this.bot.utils.chunk(fs.readdirSync(path).map(x => x.split('.pdf')[0].split("-").slice(-1)[0]).map(x => Number(x)).sort((x, y) => x - y).map(x => x.toString()).map(x => `${x}.pdf`), 5)
 
         for (let i = 0; i < chunk.length; i++) {
             temp = new Array();
@@ -141,7 +144,6 @@ module.exports = class sem1 extends button {
         let main = path.split('/')
         main = main.splice(0, 3)
         main = main.join("/")
-        console.log('HR');
         int.reply('Which unit?', {
             reply_markup: {
                 inline_keyboard: [...buttons, [

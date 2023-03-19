@@ -16,14 +16,6 @@ const log = (int, data) => {
     console.log(`${int.from.first_name}${int.from.last_name ? ` ${int.from.last_name}` : ""} requested ${data.split("/").slice(-1)}`)
 }
 
-bot.keyBoardButtons.forEach(button => {
-    //for keyboard buttons, which are included in keyboard
-    bot.hears(button.name, async int => {
-        if (int.update.message.date < bot.startedAt) return;
-        button.run({ int });
-    })
-})
-
 new Array(...require('./buttons.json')).forEach(button => {
     //for inline keyboard buttons, which are included with messsage
     bot.action(button, async int => {
